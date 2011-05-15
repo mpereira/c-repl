@@ -17,13 +17,13 @@ module Child (
 
 import Prelude hiding (catch)
 import Control.Concurrent
-import Control.Exception
 import Control.Monad.Error
 import Data.Maybe
 import System.Directory
 import System.Exit
 import System.Process
 import System.IO
+import Control.OldException
 import System.Posix.IO (createPipe, fdToHandle)
 
 import qualified Paths_c_repl
