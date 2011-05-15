@@ -32,7 +32,7 @@ type XMLNode = Expat.Node String String
 -- @runGCCXML code@ runs a gccxml process on |code|, returning the XML output
 -- or an error string on error.
 runGCCXML :: String -> IO (Either String XML)
-runGCCXML code = run `catch` (\e -> do print e; undefined) where
+runGCCXML code = run where
   run = do
     let cmd = "gccxml - -fxml=/dev/stdout"
     (inp,out,err,pid) <- runInteractiveCommand cmd
